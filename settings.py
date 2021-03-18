@@ -16,7 +16,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # 各模块目录
 MODULE_DIR = {
     'logs_dir': os.path.join(BASE_DIR, 'logs'),  # 日志模块目录
-    'test_file_dir': os.path.join(BASE_DIR, 'test_case_file'),  # 测试用例文件目录
+    'test_data_dir': os.path.join(BASE_DIR, 'test_data'),  # 测试数据目录
     'test_scripts_dir': os.path.join(BASE_DIR, 'test_scripts'),  # 测试脚本目录
     'reports_dir': os.path.join(BASE_DIR, 'reports'),  # 生成报告目录
 }
