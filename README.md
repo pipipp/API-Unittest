@@ -6,7 +6,11 @@
 * python + requests  
 
 测试框架（管理用例、执行用例）：  
-* Unittest
+* unittest
+
+数据驱动：
+* excel
+* ddt
 
 生成测试报告：
 * HtmlTestRunner
@@ -15,7 +19,3 @@
 发送邮件：
 * smtplib
 * email
-
-数据驱动：
-* Excel
-* ddt
