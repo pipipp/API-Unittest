@@ -1,7 +1,7 @@
 # 基于Unittest搭建的接口自动化测试框架
 可在其基础上进行扩展和延申。
 
-## 目录结构：
+## 目录结构
 
 ├─logs  
 │      unittest_project.log  
@@ -31,7 +31,7 @@
 │  │  request_module.py  
 │  │  __init__.py  
 
-## 技术栈：
+## 技术栈
 
 测试工具（请求接口）：
 * python + requests  
