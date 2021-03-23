@@ -1,21 +1,39 @@
+import os
 import unittest
+import requests
 
-from test_scripts.case_top import CaseTop
-from utils.load_case_file_module import read_test_data
+from ddt import ddt, data, unpack
+from utils.tools import get_yaml_test_data
+from utils.loggers import LOGGER
+from utils.directors import test_param_print
+from settings import MODULE_DIR
 
 
-TEST_DATA = read_test_data('test_api.xlsx')  # 读取用例文件数据
+# 获取测试数据
+test_data = get_yaml_test_data(os.path.join(MODULE_DIR['test_data_dir'], 'proxy.yaml'))
 
 
-class TestAPI(CaseTop):
-    """
-    执行用例，需要手动添加测试脚本
-    """
+@ddt
+class TestAPI(unittest.TestCase):
 
-    @unittest.skipUnless(TEST_DATA.get('proxy_001'), 'Skip')
-    def test_proxy_001(self):
-        self.start_case(**TEST_DATA['proxy_001'])
+    def setUp(self):
+        """在每个测试方法之前执行"""
+        pass
 
-    @unittest.skipUnless(TEST_DATA.get('proxy_002'), 'Skip')
-    def test_proxy_002(self):
-        self.start_case(**TEST_DATA['proxy_002'])
+    def tearDown(self):
+        """在每个测试方法之后执行"""
+        pass
+
+    @test_param_print()
+    @unpack
+    @data(*test_data)
+    def test_proxy(self, case, http, expected):
+        r = requests.request(http['method'],
+                             url=http['host'] + http['path'],
+                             headers=http['headers'],
+                             params=http['params'])
+        resp = r.json()
+
+        self.assertEqual(resp['status'], expected['response']['status'])
+        self.assertEqual(resp['message'], expected['response']['message'])
+        self.assertEqual(bool(resp['data']), expected['response']['data'])

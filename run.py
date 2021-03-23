@@ -7,9 +7,9 @@
 
 import unittest
 
-from utils.email_module import MAIL_PUSH
+from utils.email_push import MAIL_PUSH
 from settings import TEST_LAUNCH_CONFIG, MAIL_CONFIG
-from utils.output_report_module import run_and_generate_test_report_from_br
+from utils.output_report import run_and_generate_test_report_from_br
 
 
 class TestLaunch(object):

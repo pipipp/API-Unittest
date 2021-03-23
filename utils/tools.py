@@ -1,9 +1,10 @@
 # -*- coding:utf-8 -*-
 """
-通用模块
+工具模块
 """
 
 import os
+import yaml
 import hashlib
 import platform
 import configparser
@@ -12,7 +13,28 @@ import pandas as pd
 from settings import MODULE_DIR
 
 
-def read_excel(filename='test_api.xlsx', sheet_name=0):
+def get_yaml_test_data(filepath):
+    """
+    获取yaml文件的测试数据
+    :param filepath: 文件路径
+    :return:
+    test_data = [(http, expected), (http, expected), ...]
+    """
+    case = []  # 存储测试用例名称
+    http = []  # 存储请求对象
+    expected = []  # 存储预期结果
+    with open(filepath) as f:
+        data = yaml.load(f.read(), Loader=yaml.SafeLoader)
+        test = data['tests']
+        for each in test:
+            case.append(each.get('case', ''))
+            http.append(each.get('http', {}))
+            expected.append(each.get('expected', {}))
+    params = list(zip(case, http, expected))  # 将每条用例解包在一起
+    return params
+
+
+def get_excel_test_data(filename='test_api.xlsx', sheet_name=0):
     """
     读取Excel表格
     :param filename: 文件名
@@ -81,7 +103,3 @@ def check_directory_exists(file_path):
     for each_directory in check_directory_list:
         if not os.path.isdir(each_directory):
             os.mkdir(each_directory)
-
-
-if __name__ == '__main__':
-    print(read_excel())

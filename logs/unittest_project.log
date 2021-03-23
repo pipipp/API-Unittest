@@ -1,2 +1,16 @@
-2021-03-04 18:43:49,416 - email_module.py[line:67] - DEBUG: 添加附件成功，文件：（reports\2021-03-04\18_43_46_unittest_project.html），发件人：evan.liu@qq.com，收件人：ziran.pipi@qq.com，主旨：接口自动化测试报告
-2021-03-04 18:43:49,649 - email_module.py[line:92] - ERROR: 发送邮件失败，错误原因：(502, b'Invalid input from 100.107.4.33 to newxmesmtplogicsvrsza9.qq.com')，发件人：evan.liu@qq.com，收件人：ziran.pipi@qq.com，主旨：接口自动化测试报告
+2021-03-23 15:28:40,724 - directors.py[line:19] - DEBUG: 开始执行用例：test_proxy
+2021-03-23 15:28:40,725 - directors.py[line:21] - DEBUG: 测试数据**************************************************
+2021-03-23 15:28:40,725 - directors.py[line:23] - DEBUG: 获取proxy接口的所有代理
+2021-03-23 15:28:40,725 - directors.py[line:23] - DEBUG: {'host': 'http://127.0.0.1:8000/', 'path': 'proxy/', 'method': 'GET', 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}, 'params': {'about': 'all'}}
+2021-03-23 15:28:40,728 - directors.py[line:23] - DEBUG: {'response': {'status': True, 'message': 'Success', 'data': True}}
+2021-03-23 15:28:40,728 - directors.py[line:24] - DEBUG: **********************************************************
+2021-03-23 15:28:40,728 - directors.py[line:27] - DEBUG: 执行时间：2021-03-23 15:28:40.728200
+2021-03-23 15:28:40,752 - directors.py[line:35] - DEBUG: 结束时间：2021-03-23 15:28:40.728200，耗时：0.023902s
+2021-03-23 15:28:40,752 - directors.py[line:19] - DEBUG: 开始执行用例：test_proxy
+2021-03-23 15:28:40,753 - directors.py[line:21] - DEBUG: 测试数据**************************************************
+2021-03-23 15:28:40,753 - directors.py[line:23] - DEBUG: 获取proxy接口的有效代理
+2021-03-23 15:28:40,753 - directors.py[line:23] - DEBUG: {'host': 'http://127.0.0.1:8000/', 'path': 'proxy/', 'method': 'GET', 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36'}, 'params': {'about': 'valid'}}
+2021-03-23 15:28:40,753 - directors.py[line:23] - DEBUG: {'response': {'status': True, 'message': 'Success', 'data': True}}
+2021-03-23 15:28:40,753 - directors.py[line:24] - DEBUG: **********************************************************
+2021-03-23 15:28:40,753 - directors.py[line:27] - DEBUG: 执行时间：2021-03-23 15:28:40.753125
+2021-03-23 15:28:40,783 - directors.py[line:35] - DEBUG: 结束时间：2021-03-23 15:28:40.753125，耗时：0.030352s

@@ -9,7 +9,7 @@ import smtplib
 from email.header import Header
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from utils.logger_module import LOGGER
+from utils.loggers import LOGGER
 from settings import MAIL_CONFIG
 
 
